@@ -1,0 +1,26 @@
+<h1>Welcome!</h1>
+
+#if ($cds)
+  <ul>
+    #foreach ($cd in $cds)
+      <li>Genre: $cd.getGenre(), Artist: $cd.getArtist(), Album: $cd.getAlbum()</li>
+    #end
+  </ul>
+#else
+  <p>No CDs!</p>
+#end
+
+<p>Add a new CD:</p>
+
+<form action="/" method="post">
+  <label for="genre">Genre: </label>
+  <input id="genre" name="genre" type="text">
+
+  <label for="artist">Artist:</label>
+  <input id="artist" name="artist" type="text">
+
+  <label for="album">Album:</label>
+  <input id="album" name="album" type="text">
+
+  <button type="submit" class="btn btn-default">Add CD</button>
+</form>
